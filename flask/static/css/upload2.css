@@ -1,0 +1,68 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+form {
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: inline-block;
+}
+
+input[type="file"] {
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fond de la page */
+}
+
+.container {
+    display: flex;
+    flex-direction: row; /* Aligner horizontalement */
+    justify-content: center; /* Centrer horizontalement dans le conteneur */
+    align-items: center; /* Centrer verticalement dans le conteneur */
+    gap: 20px; /* Espacement entre les cadres */
+}
+.barre-gauche {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 100"><path fill="CadetBlue" d="M0,0 Q5,50 0,100 T0,0"/></svg>') repeat-y;
+    background-size: contain;
+}
+.barre-bas {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 150px; 
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10"><path fill="CadetBlue" d="M0,10 Q50,5 100,10 T200,10"/></svg>') repeat-x;
+    background-size: contain;
+}
+.img1{
+    width: 20%;
+    height: 20%;
+}
+
+
+
+
+
+
