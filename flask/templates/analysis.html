@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/analysis.css') }}">
+    <title>File Analysis Results</title>
+</head>
+<body>
+    <div class="barre-gauche"></div>
+    <div class="barre-bas"></div>
+    <h1 class="titre">Analysis Results</h1>
+    {% if predictions_with_indices %}
+        <ul class="predictions-list">
+            {% for idx, prediction in predictions_with_indices %}
+                <li class="prediction-item">Prediction {{ idx }}: {{ prediction }}</li>
+            {% endfor %}
+        </ul>
+    {% elif error %}
+        <p>{{ error }}</p>
+    {% else %}
+        <p>No predictions made.</p>
+    {% endif %}
+    <a href="{{ url_for('home') }}" class="upload-link">Upload another file</a>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/principal.css') }}">
+</head>
+<body>
+    <div class="barre-gauche"></div>
+    <div class="barre-bas"></div>
+    <div class="container">
+        <img class="img1" src="{{ url_for('static', filename='images/malware.png') }}">
+        <div class="box">
+            <h2>Detection des Malwares pour images</h2>
+            <p><a href="{{ url_for('upload_image') }}">Telecharger l'image</a></p>
+        </div>
+        <div class="box">
+            <h2>Detection des Malwares pour signatures</h2>
+            <p><a href="{{ url_for('upload_file') }}">Telecharger le fichier</a></p>
+        </div>
+    </div>
+</body>
+</html>

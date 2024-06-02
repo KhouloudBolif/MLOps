@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+form {
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: inline-block;
+}
+
+input[type="file"] {
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fond de la page */
+}
+
+.container {
+    display: flex;
+    flex-direction: row; /* Aligner horizontalement */
+    justify-content: center; /* Centrer horizontalement dans le conteneur */
+    align-items: center; /* Centrer verticalement dans le conteneur */
+    gap: 20px; /* Espacement entre les cadres */
+}
+
+
+.box {
+    width: 200px; /* Largeur du carré */
+    height: 200px; /* Hauteur du carré pour le rendre carré */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.box h2 {
+    margin: 0 0 10px 0; /* Espacement du titre */
+}
+
+.box p {
+    text-align: center; /* Centre le texte dans le paragraphe */
+}
+
+.box a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.box a:hover {
+    background-color: #0056b3;
+}
