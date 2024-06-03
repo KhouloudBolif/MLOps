@@ -14,7 +14,13 @@ form {
 input[type="file"] {
     margin: 10px 0;
 }
-
+.bad{
+    color: red;
+}
+.black{
+    color: black;
+  font-weight: bolder  ;
+}
 button {
     padding: 10px 20px;
     cursor: pointer;

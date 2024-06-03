@@ -89,18 +89,18 @@ def extract_specific_features(file_path):
         specific_features['SectionsMeanEntropy'] = sum(section_entropies) / len(section_entropies) if section_entropies else 0
 
         # Calculer les entropies pour les ressources
-        if hasattr(pe, 'DIRECTORY_ENTRY_RESOURCE'):
-            resource_entropies = []
-            for entry in pe.DIRECTORY_ENTRY_RESOURCE.entries:
-                if entry.directory:
-                    for subentry in entry.directory.entries:
-                        if subentry.data:
-                            resource_data = subentry.data.get_data()
-                            if resource_data:
-                                entropy = calculate_entropy(resource_data)
-                                resource_entropies.append(entropy)
-            specific_features['ResourcesMinEntropy'] = min(resource_entropies) if resource_entropies else 0
-            specific_features['ResourcesMaxEntropy'] = max(resource_entropies) if resource_entropies else 0
+        #if hasattr(pe, 'DIRECTORY_ENTRY_RESOURCE'):
+         #   resource_entropies = []
+          #  for entry in pe.DIRECTORY_ENTRY_RESOURCE.entries:
+          #      if entry.directory:
+            #        for subentry in entry.directory.entries:
+              #          if subentry.data:
+               #             resource_data = subentry.data.get_data()
+                #            if resource_data:
+                 #               entropy = calculate_entropy(resource_data)
+                  #              resource_entropies.append(entropy)
+          #  specific_features['ResourcesMinEntropy'] = min(resource_entropies) if resource_entropies else 0
+           # specific_features['ResourcesMaxEntropy'] = max(resource_entropies) if resource_entropies else 0
 
         return specific_features
 
@@ -112,12 +112,12 @@ def extract_specific_features(file_path):
         return None
 
 # Example usage
-file_path = 'C:/Users/khoul/Dropbox/PC/Downloads/eclipse-java-2024-03-R-win32-x86_64/eclipse/eclipsec.exe'
-specific_features = extract_pe_info(file_path)
+#file_path = 'flask/static/uploads/ZeusInstaller.exe'
+#specific_features = extract_specific_features(file_path)
 
  #Print the extracted features if extraction was successful
-if specific_features:
-    import pprint
-    pprint.pprint(specific_features)
+#if specific_features:
+ #   import pprint
+   # pprint.pprint(specific_features)
 #else:
    #  print("Failed to extract features from the PE file.")

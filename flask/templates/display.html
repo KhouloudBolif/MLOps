@@ -11,7 +11,10 @@
     <div class="barre-bas"></div>
     <h1 class="titre">Result of Image Prediction</h1>
     <div>
-        <h2 class="prediction-item">Predicted Class:  {{predicted_class}}   </h2>
+        <!--<h2 class="prediction-item">Predicted Class:  {{predicted_class}}   </h2>-->
+        <p class="bad">Warning: This image contains malware  </p>
+        <p class="good">Malware Type : <span class="black"> {{predicted_class}} </span>  </p>
+
         <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image">
     </div>
     <a href="/" class="upload-link">Upload another image</a>

@@ -11,7 +11,7 @@ from processingNewMalware import *
 
 app = Flask(__name__)
 
-model_path = 'C:/Users/linat/Desktop/MLOps-main/MLOps-main/rf_classifier_model.pkl'
+model_path = 'flask/Models/rf_classifier_model.pkl'
 app.config['UPLOAD_FOLDER'] = os.path.join(app.static_folder, 'uploads')
 
 
@@ -38,7 +38,7 @@ def load_data(dataset_dir):
     return images, labels
 
 label_encoder = LabelEncoder()
-dataset_dir = 'C:/Users/linat/Desktop/malware_dataset/train'
+dataset_dir = 'flask/Dataset/train'
 _, labels = load_data(dataset_dir)
 label_encoder.fit(labels)
 
@@ -86,6 +86,7 @@ def upload_image():
         if file and file.filename != '':  # S'assure que le fichier est présent et que le nom n'est pas vide
             filename = secure_filename(file.filename)
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            print(filepath)
             file.save(filepath)
             return redirect(url_for('display_image', filename=filename))
         else:
@@ -103,7 +104,7 @@ def display_image(filename):
     return render_template('display.html', filename=filename, predicted_class=predicted_label[0])
 
 ##partie signature
-file_path = 'C:/Users/linat/Desktop/MLOps-main/lieaugit/MLOps/flask/eclipsec.exe'
+#file_path = 'flask/eclipsec.exe'
 @app.route('/upload_file', methods=['GET', 'POST'])
 def upload_file():
     error_message = None
@@ -126,13 +127,15 @@ def file_analysis(filename):
     if features:
         predictions = make_prediction(features)
         predictions_with_indices = list(enumerate(predictions))
+        print(predictions)
+        print(predictions_with_indices)
         return render_template('analysis.html', predictions_with_indices=predictions_with_indices)
     else:
         return render_template('analysis.html', error="Aucune caractéristique extraite. Impossible de faire une prédiction.")
 
 
 def make_prediction(features):
-    model = Load_model('C:/Users/linat/Desktop/MLOps-main/MLOps-main/random_forest_model.pkl')
+    model = Load_model('flask/Models/random_forest_model.pkl')
     # Transformer les caractéristiques d'un dictionnaire en liste
     feature_list = list(features.values()) if isinstance(features, dict) else features
     # S'assurer que les caractéristiques sont sous forme d'une liste de listes (2D array)

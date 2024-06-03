@@ -1,0 +1,10 @@
+Flask
+Pillow
+Werkzeug
+numpy
+opencv-python
+scikit-learn
+pefile
+
+
+
